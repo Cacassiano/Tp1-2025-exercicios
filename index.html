@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = ["a", "b", "c"], x;
+        alert("Essa é a estrutura de uma regra de três:\na-------b\nc-------X");
+        for (let i = 0; i <arr.length; i++){
+            let letter = arr[i];
+            /*
+                preferi usar o while ao inves do do-while para evitar comparacoes denecessarias
+                do{
+                    [...]
+                    if(condicao){
+                        // mostrar mensagem de erro caso errado;
+                    }
+                }while(condicao) // fazer repeticao
+            */
+            arr[i] = parseFloat(prompt("Digite o valor de "+letter+":"));
+            while(Number.isNaN(arr[i])) {
+                alert("Por favor, escreva um numero valido!");
+                arr[i] = parseFloat(prompt("Digite o valor de "+letter+":"));
+            }
+        }
+        alert("Essa é a estrutura de uma regra de três com os valores que colocou:\n"+arr[0]+"-------"+arr[1]+"\n"+arr[2]+"-------X");
+        x =  (arr[2] * arr[1]) / arr[0];
+        alert("Agora com o valor de x:\n"+arr[0]+"-------"+arr[1]+"\n"+arr[2]+"-------"+x);
+    </script>
+</head>
+<body>
+    <form action="">
+        <label for="">digite o valor de a: <input type="number" name="a" id="a"></label>
+        <label for="">digite o valor de b: <input type="number" name="b" id="b"></label>
+        <label for="">digite o valor de c: <input type="number" name="c" id="c"></label>
+        <button type="submit" onclick="calcular()">Enivar</button>
+    </form>
+</body>
+</html>

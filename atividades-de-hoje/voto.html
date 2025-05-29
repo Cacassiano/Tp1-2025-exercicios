@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let x;
+        do {
+            x = prompt("digite sua idade: ");
+        } while(!Number.isInteger(parseInt(x)));
+
+        if (x < 16){
+            alert("voto vedado");
+        } else if (x<18) {
+            alert("voto opcional");
+        } else if (x>= 18 && x< 70) {
+            alert("voto obrigatorio");
+        } else {
+            alert("voto opcional");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
