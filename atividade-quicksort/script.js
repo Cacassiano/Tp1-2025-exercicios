@@ -33,9 +33,10 @@ function sort(arr, ini, fim) {
     return index;
 }
 
-
-
-let arr = [43,44,321,65,678,4,984,56456,8,66,128,6,8,333,895,2,44,21,5,5];
+let arr = []
+for(i = 0; i<10;i++) {
+    arr.push(parseInt(Math.random()*100))
+}
 quicksort(arr, 0, arr.length-1); 
 console.log(arr);
 alert(arr);
