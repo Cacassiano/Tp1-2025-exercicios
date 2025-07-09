@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        let arr = ["a", "b", "c"], x;
-        alert("Essa é a estrutura de uma regra de três:\na-------b\nc-------X");
-        for (let i = 0; i <arr.length; i++){
-            let letter = arr[i];
-            /*
-                preferi usar o while ao inves do do-while para evitar comparacoes denecessarias
-                do{
-                    [...]
-                    if(condicao){
-                        // mostrar mensagem de erro caso errado;
-                    }
-                }while(condicao) // fazer repeticao
-            */
-            arr[i] = parseFloat(prompt("Digite o valor de "+letter+":"));
-            while(Number.isNaN(arr[i])) {
-                alert("Por favor, escreva um numero valido!");
-                arr[i] = parseFloat(prompt("Digite o valor de "+letter+":"));
-            }
-        }
-        alert("Essa é a estrutura de uma regra de três com os valores que colocou:\n"+arr[0]+"-------"+arr[1]+"\n"+arr[2]+"-------X");
-        x =  (arr[2] * arr[1]) / arr[0];
-        alert("Agora com o valor de x:\n"+arr[0]+"-------"+arr[1]+"\n"+arr[2]+"-------"+x);
-    </script>
-</head>
-<body>
-</body>
-</html>
+<meta charset="UTF-8"> 
+
+<script>
+    capital = validar("Coloque a quantidade inicial a investir");
+    taxa =  validar("Coloque a taxa em por cento a render por mes");
+    tempo = validar("Coloque o tempo a simular");
+
+    for(i = 0; i<tempo; i++){
+        temp = capital * (taxa/100);
+        capital += temp;
+        alert(`No 1º mês a aplicação rendeu R$${temp.toFixed(2)} e o total aplicado passou a ser R$${capital.toFixed(2)}`)
+    }
+    alert(`aqui esta o saldo final R$${capital.toFixed(2)}`)
+
+
+
+
+    function validar(string) {
+        num = 0;
+        do{
+            num = parseInt(prompt(string));
+        }while(Number.isNaN(num) || num <= 0);
+        return num;
+    }
+</script>
