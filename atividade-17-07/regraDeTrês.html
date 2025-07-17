@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regra de Três</title>
+</head>
+<body>
+    <label for="a">A: <input type="number" name="a" id="a"></label>
+    -------------
+    <label for="b">B: <input type="number" name="b" id="b"></label> 
+    <br>
+    <label for="c">C: <input type="number" name="c" id="c"></label>
+    ------------- X
+    <button type="submit" onclick="calcularRegra()">Enviar</button>
+
+    <div id = "resultado">
+    </div>
+    <script>
+        function calcularRegra() {
+            a = parseInt(document.getElementById("a").value);
+            b = parseInt(document.getElementById("b").value);
+            c = parseInt(document.getElementById("c").value);
+            resultado = (b*c)/a;
+            document.getElementById("resultado").innerHTML = "<h1>X = "+resultado+"</h1>"
+        }
+    </script>
+</body>
+</html>
