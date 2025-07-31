@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function mudaVisibilidade(elemento) {
+        const elementoHTML = document.getElementById(elemento)
+        elementoHTML.className = elementoHTML.className == "esconde" ? "mostra" : "esconde";
+        checkAtivos();
+    }
+    const checkAtivos = () => {
+        const uls = document.querySelectorAll("ul");
+        temAtivos = false;
+        uls.forEach(e => {
+            if(e.className == "mostra") {
+                temAtivos = true;
+            } 
+        })
+        if(!temAtivos) mudarButton(document.querySelector("button"), "mostrar");
+    }
+
+    const mudarButton = (button, id = null) => {
+        if(id==null) {
+            button.innerHTML = button.id == "mostrar" ? "Esconder Tudo" : "Mostrar Tudo"
+            button.id = button.id == "mostrar" ? "esconder" : "mostrar";
+        }else {
+            button.id = id;
+            button.innerHTML = button.id == "esconder" ? "Esconder Tudo" : "Mostrar Tudo"
+        }
+        
+        
+    }
+    const trocarTudo = (htmlButton) => {
+        const uls = document.querySelectorAll("ul");
+        const button  = document.getElementById(htmlButton);
+        uls.forEach(e => {
+            e.className = button.id == "mostrar" ? "mostra" : "esconde"
+        })
+        mudarButton(button);
+
+    }
+</script>
+<style>
+    .mostra {
+        display:block;
+    }
+    .esconde {
+        display:none;
+    }
+</style>
+</head>
+<body>
+    <button id="mostrar" onclick="trocarTudo(id)">Mostrar Tudo</button>
+    <ol>
+        <li onclick="mudaVisibilidade('listaTeste1')">Teste1</li>
+        <ul id="listaTeste1" class="mostra">
+            <li>bla</li>
+            <li>bla</li>
+            <li>bla</li>
+        </ul>
+        <li onclick="mudaVisibilidade('listaTeste2')">Teste2</li>
+        <ul id="listaTeste2" class="mostra">
+            <li>ble</li>
+            <li>ble</li>
+            <li>ble</li>
+        </ul>
+    </ol>
+</body>
+</html>
