@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        n1: <input type="number" id="n1" required>
+        n2: <input type="number" id="n2" required>
+        <button type="reset">Reset</button>
+    </form>
+    <button onclick="soma()">+</button>
+    <button onclick="menos()">-</button>
+    <button onclick="div()">/</button>
+    <button onclick="mult()">X</button>
+
+    <ol id="historico">
+
+    </ol>
+    <script>
+        
+        const soma= () => {
+            let nums = getNums();
+            addHistorico(nums.n1 + nums.n2, nums, "+");
+        }
+        const menos= () => {
+            let nums = getNums();
+            addHistorico(nums.n1 - nums.n2, nums, "-");
+        }
+        const div= () => {
+            let nums = getNums();
+            addHistorico(nums.n1 / nums.n2, nums, "/");
+        }
+        const mult = () => {
+            let nums = getNums();
+            addHistorico(nums.n1 * nums.n2, nums, "X");
+        }
+        const getNums = () => {
+            return {
+                n1 : parseFloat(document.getElementById("n1").value),
+                n2 : parseFloat(document.getElementById("n2").value)
+            }
+        }
+        const vetor = [];
+        const addHistorico = (num, nums, simbolo) => {
+            let element = document.createElement("li");
+            temp = {
+                operando1: nums.n1,
+                operando2: nums.n2,
+                operacao: simbolo,
+                resultado: num
+            }
+            element.innerHTML = nums.n1 + simbolo + nums.n2 + " = " + num;
+            vetor.push(temp);
+            document.getElementById("historico").appendChild(element);
+        }
+    </script>
+</body>
+</html>
