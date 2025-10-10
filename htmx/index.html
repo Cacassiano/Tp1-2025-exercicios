@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX Example</title>
+    <meta name="htmx-config" content='{"selfRequestsOnly":false}'>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.js" integrity="sha384-yWakaGAFicqusuwOYEmoRjLNOC+6OFsdmwC2lbGQaRELtuVEqNzt11c2J711DeCZ" crossorigin="anonymous"></script>
+    <style>
+        button, form {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button hx-get="https://ola-tp1.onrender.com/nomes" hx-target="#nomes" hx-swap="outerHTML" hx-trigger="click">Load Data</button>
+    <p id="nomes">
+
+    </p>
+    <form id="create-form">
+        <label for="inome">Insira um nome para ser criado: </label>
+        <input type="text" name="nome" id="inome">
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        const url = "https://ola-tp1.onrender.com/nomes"
+        
+        document.getElementById("create-form").addEventListener("submit", (e)=> {
+            e.preventDefault()
+            const nomeReq = document.getElementById("inome").value
+            console.log(nomeReq)
+            fetch(url, {
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({nome: nomeReq})
+            }).then(async(r) => {
+                response.innerHTML = await r.text();
+            })
+        })
+    </script>
+    <p id="response">
+
+    </p>
+</body>
+</html>
