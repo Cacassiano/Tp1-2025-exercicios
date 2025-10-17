@@ -23,13 +23,14 @@
         <button type="submit">Enviar</button>
     </form>
     <script>
-        const url = "https://ola-tp1.onrender.com/nomes"
+        const url = "https://ola-tp1.onrender.com"
         
-        document.getElementById("create-form").addEventListener("submit", (e)=> {
+        document.getElementById("create-form").addEventListener("submit", async(e)=> {
             e.preventDefault()
             const nomeReq = document.getElementById("inome").value
+            
             console.log(nomeReq)
-            fetch(url, {
+            fetch(url+"/nomes", {
                 method:"POST",
                 headers: {
                     "Content-Type": "application/json",
