@@ -1,0 +1,21 @@
+{
+  "name": "atividade",
+  "version": "1.0.0",
+  "description": "Atividade do dia 24 de Outubro",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "test"
+  },
+  "keywords": [
+    "Atividade",
+    "tp1"
+  ],
+  "author": "Cassiano de Souza Santos",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
