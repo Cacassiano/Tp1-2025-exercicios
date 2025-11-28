@@ -7,12 +7,13 @@ app.set("view engine", "ejs")
 
 app.get("/", (req, res) => res.render("form"));
 
-app.get("/hello", (req, res) => {
-    const {nome, sobrenome} = req.query;
-    if(!nome || !sobrenome) {
+app.post("/hello", (req, res) => {
+    console.log(req.body)
+    const {nome, sobrenome, cidade} = req.body;
+    if(!nome || !sobrenome || !cidade) {
         return res.redirect("/");
     } 
-    return res.render("hello", {nome, sobrenome});
+    return res.render("hello", {nome, sobrenome, cidade});
 })
 
 app.use((req, res, next) => res.redirect("/"))
