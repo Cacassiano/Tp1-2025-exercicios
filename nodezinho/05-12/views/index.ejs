@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title> 
+</head>
+<body>
+    <h1>Tente descobrir o meu número que vai de 1 à 100</h1>
+    <p>Recarregue a pagina para sortear outro número</p>
+    
+    
+    <form action="/" method="post" id="form">
+        <label for="ipalpite">Palpite: </label>
+        <input type="number" name="palpite" id="ipalpite" autofocus>
+        <input type="number" id="hid" hidden name="random">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <button onclick="reset()">reset num</button>
+    <script>
+        let rand = localStorage.getItem("random") ? localStorage.getItem("random")-0:  <%= random %>
+        localStorage.setItem("random", rand)
+        console.log(rand)
+        document.getElementById("hid").value = rand
+
+        function reset() {
+            localStorage.setItem("random", "")
+            window.location= "/"
+        }
+    </script>
+
+    <% if (resposta) { %>
+    <h2><%= resposta %></h2>
+    <% } %>
+
+</body>
+</html>
