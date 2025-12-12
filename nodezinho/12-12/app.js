@@ -5,6 +5,7 @@ const cors = require("cors")
 app.use(express.urlencoded())
 app.use(cors());
 app.set("view engine", "ejs")
-app.get("/", (req, res) => res.render("index"))
+app.get("/", (req, res) => res.send("Faz o L!"))
 
-app.listen(8080, () => console.log("http://localhost:8080"));
+
+app.listen(3000, () => console.log("http://localhost:3000"));
