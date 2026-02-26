@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - PetShop Amigo Fiel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">PetShop Amigo Fiel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/produto">Serviços</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Fotos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/fotos">Galeria</a></li>
+                            <li><a class="dropdown-item active" href="/unidade">Unidade Quissamã</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/detalhes">Vantagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-success">Nossos Serviços</h2>
+            <p class="text-muted">Soluções completas para a saúde e estética do seu melhor amigo.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=300&h=200" class="card-img-top" alt="Veterinário">
+                    <div class="card-body">
+                        <h5 class="card-title">Consulta Veterinária</h5>
+                        <p class="card-text">Clínica geral, vacinação e exames preventivos realizados por profissionais apaixonados.</p>
+                        <button class="btn btn-success">Agendar Consulta</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=301&h=200" class="card-img-top" alt="Banho e Tosa">
+                    <div class="card-body">
+                        <h5 class="card-title">Estética Animal</h5>
+                        <p class="card-text">Banho relaxante, tosa higiênica, hidratação e corte de unhas com todo cuidado.</p>
+                        <button class="btn btn-outline-success">Ver Preços</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://www.racoesrenata.com.br/imagens/imagens-gs/racao-para-cachorro-no-centro-guarulhos.jpg" class="card-img-top" alt="Pet Shop" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Farmácia e Rações</h5>
+                        <p class="card-text">Linha completa de medicamentos, petiscos e rações terapêuticas para todas as necessidades.</p>
+                        <button class="btn btn-warning fw-bold">Pedir Delivery</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

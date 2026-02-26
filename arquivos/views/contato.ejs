@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - PetShop Amigo Fiel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">PetShop Amigo Fiel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/produto">Serviços</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Fotos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/fotos">Galeria</a></li>
+                            <li><a class="dropdown-item active" href="/unidade">Unidade Quissamã</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/detalhes">Vantagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">Onde Estamos</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nossa Unidade</h5>
+                        <p class="card-text">Av. Amilcar Pereira da Silva, 727 - Piteiras, Quissamã - RJ, 28735-000</p>
+                        <p class="card-text"><strong>Telefone:</strong> (22) 3333-3333</p>
+                    </div>
+                </div>
+
+                <div class="accordion" id="accordionFaq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                Vocês buscam o pet em casa?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                            <div class="accordion-body">
+                                Sim! Oferecemos serviço de Taxi Pet em toda a região de Quissamã.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card p-4 shadow-sm">
+                    <h3>Agende uma Visita</h3>
+                    <form action="/contato" method="post">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome do Tutor</label>
+                            <input type="text" class="form-control" id="nome" name="nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pet" class="form-label">Nome do Pet</label>
+                            <input type="text" class="form-control" id="pet" name="pet">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Qual o serviço desejado?</label>
+                            <textarea class="form-control" id="mensagem" rows="4" name="servico"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Enviar Solicitação</button>
+                    </form>
+                </div>
+            </div>
+            <% if (visitas.length > 0 ) { %>
+                <h3>Visitas agendadas</h3>
+                <% visitas.forEach(v => { %>
+                    <div class="col-md-6">
+                        <div class="card p-4 shadow-sm">
+                            
+                            <div class="card p-4 shadow-sm">
+                                <h4><strong>Nome do tutor: </strong><%= v.nome %></h4>
+                                <h4><strong>Email: </strong><%= v.email %></h4>
+                                <h4><strong>Nome do Pet: </strong><%= v.pet %></h4>
+                                <h4><strong>Descrição do servico: </strong><%= v.servico %></h4>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% }; %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - PetShop Amigo Fiel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img {
+            height: 60vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">PetShop Amigo Fiel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/produto">Serviços</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Fotos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/fotos">Galeria</a></li>
+                            <li><a class="dropdown-item active" href="/unidade">Unidade Quissamã</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/detalhes">Vantagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h2 class="text-center mb-4 fw-bold">Momentos de Alegria</h2>
+
+        <div id="carouselPets" class="carousel slide shadow-lg rounded overflow-hidden" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselPets" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselPets" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselPets" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&h=600" class="d-block w-100" alt="Cão Feliz">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Alegria no Banho</h5>
+                        <p>Nossos clientes saem sempre renovados e felizes.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1201&h=600" class="d-block w-100" alt="Gato">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Cuidado Especial para Felinos</h5>
+                        <p>Espaço exclusivo e silencioso para garantir o conforto dos gatos.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=1202&h=600" class="d-block w-100" alt="Filhote">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Saúde em Primeiro Lugar</h5>
+                        <p>Prevenção e carinho desde os primeiros meses de vida.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPets" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPets" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

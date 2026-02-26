@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vantagens - PetShop Amigo Fiel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">PetShop Amigo Fiel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/produto">Serviços</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Fotos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/fotos">Galeria</a></li>
+                            <li><a class="dropdown-item active" href="/unidade">Unidade Quissamã</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/detalhes">Vantagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h2 class="mb-4">Por que escolher nosso PetShop?</h2>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <ul class="list-group mb-5 shadow-sm">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        Visualização de produtos
+                        <span class="badge bg-success rounded-pill">Disponível</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        Agendamento com especialistas
+                        <span class="badge bg-success rounded-pill">Online</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        Pedidos de entrega
+                        <span class="badge bg-success rounded-pill">Rápido</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        Acompanhamento Veterinário
+                        <span>Incluso no Clube Pet</span>
+                    </li>
+                </ul>
+
+                <h3>Compromisso com o Bem-estar</h3>
+                <div class="accordion mt-3 shadow-sm" id="accordionDetail">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDetail1">
+                                Nossa Filosofia de Atendimento
+                            </button>
+                        </h2>
+                        <div id="collapseDetail1" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                Focamos no "Medo Zero", onde utilizamos técnicas de manejo para que seu pet se sinta seguro e tranquilo durante todo o atendimento.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="p-4 bg-success text-white rounded shadow">
+                    <h4>Clube Pet Amigo</h4>
+                    <p>Assine nosso plano mensal e tenha descontos exclusivos em todos os serviços de banho, tosa e consultas.</p>
+                    <button class="btn btn-light w-100">Quero Assinar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
