@@ -1,6 +1,6 @@
 const fs = require("fs")
 const dbPath = "service/data/db.json"
-let visitas = []
+let visitas = JSON.parse(fs.readFileSync(dbPath))
 
 const readFile = () => {
     console.log("Reading all file")
@@ -11,7 +11,7 @@ const readFile = () => {
 const writeFile = (visita) => {
     visitas.push(visita)
     fs.writeFileSync(dbPath, JSON.stringify(visitas))
-    console.log("Nome salvo")
+    console.log("visita salvo")
     return visitas
 }
 module.exports = {
